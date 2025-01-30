@@ -1,11 +1,47 @@
 import { useEffect, useRef } from 'react';
 
 const skills = [
-  { category: 'Programming Languages', items: ['PHP', 'Python', 'Java'] },
-  { category: 'Frameworks', items: ['Laravel', 'React.js', 'Django'] },
-  { category: 'Cloud/DevOps', items: ['AWS', 'Google Cloud', 'Docker', 'Kubernetes'] },
-  { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB'] },
-  { category: 'Security', items: ['CISSP', 'Encryption', 'Vulnerability Assessments'] }
+  { 
+    category: 'Programming Languages', 
+    items: [
+      { name: 'PHP', level: 98 },
+      { name: 'Python', level: 95 },
+      { name: 'Java', level: 90 }
+    ]
+  },
+  { 
+    category: 'Frameworks', 
+    items: [
+      { name: 'Laravel', level: 95 },
+      { name: 'React.js', level: 92 },
+      { name: 'Django', level: 88 }
+    ]
+  },
+  { 
+    category: 'Cloud/DevOps', 
+    items: [
+      { name: 'AWS', level: 90 },
+      { name: 'Google Cloud', level: 85 },
+      { name: 'Docker', level: 92 },
+      { name: 'Kubernetes', level: 88 }
+    ]
+  },
+  { 
+    category: 'Databases', 
+    items: [
+      { name: 'MySQL', level: 95 },
+      { name: 'PostgreSQL', level: 92 },
+      { name: 'MongoDB', level: 88 }
+    ]
+  },
+  { 
+    category: 'Security', 
+    items: [
+      { name: 'CISSP', level: 95 },
+      { name: 'Encryption', level: 90 },
+      { name: 'Vulnerability Assessments', level: 92 }
+    ]
+  }
 ];
 
 const Skills = () => {
@@ -44,14 +80,17 @@ const Skills = () => {
               </h3>
               <ul className="space-y-3">
                 {skillGroup.items.map((skill) => (
-                  <li key={skill} className="flex items-center">
+                  <li key={skill.name} className="flex flex-col">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-sm">{skill.name}</span>
+                      <span className="text-sm text-primary">{skill.level}%</span>
+                    </div>
                     <div className="w-full bg-secondary/20 rounded-full h-2">
                       <div
                         className="skill-bar"
-                        style={{ width: '85%' }}
+                        style={{ width: `${skill.level}%` }}
                       />
                     </div>
-                    <span className="ml-3 text-sm">{skill}</span>
                   </li>
                 ))}
               </ul>
