@@ -36,12 +36,12 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Experience</h2>
         <div className="relative">
           <div className="experience-line" />
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.title}
@@ -51,12 +51,12 @@ const Experience = () => {
                 className="relative pl-8"
               >
                 <div className="absolute left-[-5px] top-0 w-3 h-3 bg-primary rounded-full" />
-                <div className="bg-secondary/10 rounded-lg p-6 hover:bg-secondary/20 transition-colors">
-                  <h3 className="text-xl font-semibold text-primary">{exp.title}</h3>
-                  <p className="text-muted-foreground mt-1">{exp.company} | {exp.period}</p>
+                <div className="bg-secondary/10 rounded-lg p-4 sm:p-6 hover:bg-secondary/20 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-primary">{exp.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mt-1">{exp.company} | {exp.period}</p>
                   <ul className="mt-4 space-y-2">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start">
+                      <li key={i} className="flex items-start text-sm sm:text-base">
                         <span className="text-primary mr-2">•</span>
                         <span>{achievement}</span>
                       </li>
