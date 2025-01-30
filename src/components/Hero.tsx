@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
@@ -8,8 +9,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-4 sm:space-y-6"
+          className="space-y-6 sm:space-y-8"
         >
+          <div className="flex justify-center">
+            <Avatar className="h-32 w-32 sm:h-40 sm:w-40">
+              <AvatarImage 
+                src="/lovable-uploads/c54f6734-8833-4518-bd08-689111196117.png" 
+                alt="Victor Shammah"
+                className="object-cover"
+              />
+              <AvatarFallback>VS</AvatarFallback>
+            </Avatar>
+          </div>
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground">
             Victor <span className="text-primary">Shammah</span>
           </h1>
